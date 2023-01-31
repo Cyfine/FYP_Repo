@@ -8,12 +8,14 @@ def parse_args():
     parser.add_argument(
         "--configs", type=str, default="", help="configs file",
     )
+
     parser.add_argument(
         "--result-dir",
         default="./trained_models",
         type=str,
         help="directory to save results",
     )
+
     parser.add_argument(
         "--exp-name",
         type=str,
