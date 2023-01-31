@@ -1,0 +1,14 @@
+.idea
+.vscode
+.DS_Store
+*.tar
+trained_models
+*.pyc
+datasets/*
+__pycache__
+*/__pycache__
+*/.ipynb_checkpoints
+*/.vscode
+*/.idea
+*/.DS_Store
+*/*.tar

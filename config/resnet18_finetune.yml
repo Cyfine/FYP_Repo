@@ -1,0 +1,38 @@
+result_dir: "trained_models"
+exp_name: "resnet18_prune_0.5_finetune"
+exp_mode: "finetune"
+
+# Model
+arch: "resnet18"
+pretrained: True # only support resnet
+checkpoint: "trained_models/resnet18_prune_0.5/2--lr-0.001_epochs-100_warmuplr-0.0001_warmupepochs-10/checkpoint/model_best.pth.tar"
+
+# Data
+dataset: "CIFAR10"
+data_dir: "datasets"
+num_classes: 10
+
+# Train
+batch_size: 32
+test_batch_size: 32
+epochs:  20 
+optimizer: "sgd"
+wd: 0.0001
+lr: 0.0005
+lr_schedule: "cosine"
+momentum: 0.9
+
+warmup_epochs: 10
+warmup_lr: 0.0001
+
+gpu: "0"
+no_cuda: False
+seed: 8848
+print_freq: 10
+
+
+
+# prune
+layer_type: "subnet"
+prune_rate:  0.5
+

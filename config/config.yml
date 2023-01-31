@@ -1,0 +1,35 @@
+result_dir: "trained_models"
+exp_name: "tmp"
+exp_mode:  "train"
+
+# Model
+arch: "resnet18"
+pretrained: True # only support resnet
+
+# Data
+dataset: "CIFAR10"
+data_dir: "datasets"
+num_classes: 10
+
+# Train
+batch_size: 16
+test_batch_size: 16
+epochs: 60
+optimizer: "sgd"
+wd: 0.0001
+lr: 0.1
+lr_schedule: "cosine"
+momentum: 0.9
+
+warmup_epochs: 0
+warmup_lr: 0.1
+
+gpu: "0"
+no_cuda: False
+seed: 8848
+print_freq: 10
+
+# prune
+layer_type: "dense"
+
+

@@ -1,0 +1,38 @@
+result_dir: "trained_models"
+exp_name: "resnet50_prune_0.8_finetune" # TODO: prune rate 0.5, 0.8, 0.1
+exp_mode: "finetune"
+
+# Model
+arch: "resnet50"
+pretrained: False # only support resnet
+checkpoint: "" # TODO: path to the best model you just pruned
+
+# Data
+dataset: "CIFAR10"
+data_dir: "datasets"
+num_classes: 10
+
+# Train
+batch_size: 32
+test_batch_size: 32
+epochs:  20 
+optimizer: "sgd"
+wd: 0.0001
+lr: 0.0005
+lr_schedule: "cosine"
+momentum: 0.9
+
+warmup_epochs: 10
+warmup_lr: 0.0001
+
+gpu: "0"
+no_cuda: False
+seed: 8848
+print_freq: 10
+
+
+
+# prune
+layer_type: "subnet"
+prune_rate:  0.8 # TODO: prune rate 0.5, 0.1, 0.8
+
